@@ -39,13 +39,17 @@ If you have an NVIDIA GPU (e.g., RTX 4070), you can enable GPU acceleration so t
 
 ### Step 1: Install NVIDIA Container Toolkit in WSL2
 
+```
 sudo apt-get update
 sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
+```
 
 ### Step 2: Verify that Docker detects your GPU
 
+```
 docker run --rm --gpus all nvidia/cuda:12.2.0-base-ubuntu22.04 nvidia-smi
+```
 
 If successful, you should see a table with your GPU information (name, memory, usage, temperature, etc.).
 
